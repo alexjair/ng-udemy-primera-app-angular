@@ -1,0 +1,25 @@
+<div class="container bg-fondo-app p-3">
+  <h2>AppView-Child</h2>
+  <div class="row">
+    <div class="row">
+      <label>Numero A:</label>
+      <input type="number" #txtNumeroA class="form-control" />
+    </div>
+    <div class="row">
+      <label>Numero B:</label>
+      <input type="number" #txtNumeroB class="form-control" />
+    </div>
+    <div class="row">
+      <button
+        class="btn btn-primary"
+        (click)="funSumarChild()"
+      >
+        Sumar Referencias
+      </button>
+    </div>
+    <div class="row">
+      <label>Resultado:</label>
+      <input type="text" #txtResultadoSuma class="form-control" />
+    </div>
+  </div>
+</div>

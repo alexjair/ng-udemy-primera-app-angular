@@ -1,0 +1,16 @@
+<div class="container bg-fondo-v2 p-4">
+  <h2>App-Frm-Suma</h2>
+  <div class="row">
+    <label> Valor A:</label>
+    <input type="number" class="form-control" min="0"  [(ngModel)]="txtValorA"/>
+  </div>
+  <div class="row">
+    <label> Valor B:</label>
+    <input type="number" class="form-control" min="0" [(ngModel)]="txtValorB" />
+  </div>
+  <div class="row">
+    <button type="button" class="btn btn-secondary" (click)="funSumar()">
+      Calular suma
+    </button>
+  </div>
+</div>

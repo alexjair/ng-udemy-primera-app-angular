@@ -1,0 +1,42 @@
+<h2>App-Persona</h2>
+<div class="container">
+  <div class="row p-1">
+    <div class="col">
+      <input
+        [(ngModel)]="txtNombre"
+        type="text"
+        class="form-control"
+        placeholder="Nombre"
+        aria-label="Nombre"
+        name="txtNombre"
+      />
+    </div>
+    <div class="col">
+      <input
+        [(ngModel)]="txtApellido"
+        type="text"
+        class="form-control"
+        placeholder="Apellido"
+        aria-label="Apellido"
+        name="txtApellido"
+      />
+    </div>
+    <div class="col">
+      <button class="btn btn-primary" (click)="funRegistarPersona()">
+        Agregar
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <app-persona-card
+          *ngFor="let row of arrayPersonas"
+          [row] = "row"
+        >
+        </app-persona-card>
+    </div>
+  </div>
+</div>

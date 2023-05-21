@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Persona }  from './persona.model';
+import { LogginserviceService }  from '../services/logginservice.service';
+import { PersonasService }  from '../services/personas.service';
 
 @Component({
   selector: 'app-persona',
@@ -7,17 +9,12 @@ import { Persona }  from './persona.model';
   styleUrls: ['./persona.component.css']
 })
 export class PersonaComponent implements OnInit {
-  constructor() { }
+  constructor(
+    private logginserviceService:LogginserviceService,
+    private personasService:PersonasService
+  ) { }
 
-  arrayPersonas: Persona [] = [
-    {
-      nombre: "July",
-      apellido: "Sanguinetti"
-    },{
-      nombre: "Jair",
-      apellido: "Rojas"
-    }
-  ];
+  arrayPersonas: Persona [] = [];
   txtNombre: string="";
   txtApellido: string="";
 
@@ -27,10 +24,15 @@ export class PersonaComponent implements OnInit {
       apellido: this.txtApellido
     }];
 
-    this.arrayPersonas = this.arrayPersonas.concat(vPersonaNew);
+    this.logginserviceService.funEnviaMensajeconsola(vPersonaNew);
+
+    //this.arrayPersonas = this.arrayPersonas.concat(vPersonaNew);
+    this.arrayPersonas = this.personasService.funAgregarPersonas(vPersonaNew);
   }
 
   ngOnInit(): void {
+    //  console.table(this.personasService.arrayPersonas);
+    this.arrayPersonas = this.personasService.arrayPersonas;
   }
 
 }

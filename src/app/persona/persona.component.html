@@ -1,42 +1,63 @@
 <h2>App-Persona</h2>
 <div class="container">
-  <div class="row p-1">
-    <div class="col">
-      <input
-        [(ngModel)]="txtNombre"
-        type="text"
-        class="form-control"
-        placeholder="Nombre"
-        aria-label="Nombre"
-        name="txtNombre"
-      />
+  <form action="" #f="ngForm" (ngSubmit)="f.form.valid && funRegistarPersona()">
+    <div class="row p-1">
+      <div class="col">
+        <input
+          [(ngModel)]="txtNombre"
+          type="text"
+          class="form-control"
+          placeholder="Nombre"
+          aria-label="Nombre"
+          name="txtNombre"
+          required="true"
+        />
+      </div>
+      <div class="col">
+        <input
+          [(ngModel)]="txtApellido"
+          type="text"
+          class="form-control"
+          placeholder="Apellido"
+          aria-label="Apellido"
+          name="txtApellido"
+          required="true"
+        />
+      </div>
+      <div class="col">
+        <!--
+        <button class="btn btn-primary" (click)="funRegistarPersona()">
+          Agregar
+        </button>
+        -->
+        <button class="btn btn-primary" type="submit">Agregar Persona</button>
+      </div>
     </div>
-    <div class="col">
-      <input
-        [(ngModel)]="txtApellido"
-        type="text"
-        class="form-control"
-        placeholder="Apellido"
-        aria-label="Apellido"
-        name="txtApellido"
-      />
-    </div>
-    <div class="col">
-      <button class="btn btn-primary" (click)="funRegistarPersona()">
-        Agregar
-      </button>
-    </div>
-  </div>
+  </form>
 </div>
-
+<br />
+<h2>Lista de Personas</h2>
+<br />
 <div class="container">
   <div class="row">
     <div class="col">
-        <app-persona-card
-          *ngFor="let row of arrayPersonas"
-          [row] = "row"
-        >
-        </app-persona-card>
+      <button class="form-control" (click)="funObeneterPersonasDBFireBase()">
+        Obeneter - Personas - DBFireBase
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button class="form-control" (click)="funSalirApp()">
+        Cerrar sesion
+      </button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <app-persona-card *ngFor="let row of arrayPersonas" [row]="row">
+      </app-persona-card>
     </div>
   </div>
 </div>

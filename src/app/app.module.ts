@@ -14,6 +14,11 @@ import { RespuestaComponent } from './calculadora-comp/respuesta/respuesta.compo
 import { FrmSumaComponent } from './calculadora-comp/frm-suma/frm-suma.component';
 import { FrmReferenciasComponent } from './frm-referencias/frm-referencias.component';
 import { ViewChildComponent } from './view-child/view-child.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ErrorComponent } from './error/error.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { LoginGuardian } from './login/login-guardian.service';
 
 @NgModule({
   declarations: [
@@ -28,13 +33,17 @@ import { ViewChildComponent } from './view-child/view-child.component';
     RespuestaComponent,
     FrmSumaComponent,
     FrmReferenciasComponent,
-    ViewChildComponent
+    ViewChildComponent,
+    ErrorComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [LoginGuardian],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

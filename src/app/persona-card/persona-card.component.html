@@ -1,4 +1,16 @@
-<div class="container">
-  <li> {{ row.nombre }} - {{ row.apellido }} </li>
+<div class="container p-2">
+  <div class="row">
+    <div class="col">{{ row.nombre }} - {{ row.apellido }}</div>
+    <div class="col">
+      <a [routerLink]="['/']"
+         class="btn btn-outline-secondary"
+         [queryParams]="row"
+         >Query</a></div>
+    <div class="col">
+      <button class="btn btn-info btn-sm" type="submit" (click)="funEliminarLista()">Eliminar (by Service File)</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-info btn-sm" type="submit" (click)="funEditarLista()">Editar (by Service File)</button>
+    </div>
+  </div>
 </div>
-

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-calculadora',
@@ -11,13 +12,18 @@ export class CalculadoraComponent implements OnInit {
   txtNumeroB: number = 0;
   txtResultadoSuma: number = 0;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   funSumar(){
     this.txtResultadoSuma = Number(this.txtNumeroA)+Number(this.txtNumeroB);
   }
 
   ngOnInit(): void {
+    console.log('id: ',this.route.snapshot.params['id']);
+    console.log('name: ',this.route.snapshot.params['name']);
   }
 
 }

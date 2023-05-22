@@ -1,5 +1,24 @@
 <h2>App-Component</h2>
 <div class="container">
+  <a [routerLink]="['/login']" class="btn btn-outline-secondary">Login</a>
+  <br>
+  <br>
+  <a [routerLink]="['/']" class="btn btn-outline-secondary">Home</a>
+  <a [routerLink]="['/calculadora',1,'Carmen Paria']" class="btn btn-outline-secondary">calculadora (Parametros)</a>
+  <a [routerLink]="['/calculadora-comp']" class="btn btn-outline-success">calculadora-comp</a>
+  <a [routerLink]="['/formulario']" class="btn btn-outline-danger">formulario</a>
+  <a [routerLink]="['/frm-referencias']" class="btn btn-outline-warning">frm-referencias</a>
+  <a [routerLink]="['/inlinea']" class="btn btn-outline-info">inlinea</a>
+  <a [routerLink]="['/persona']" class="btn btn-outline-primary">persona</a>
+  <a [routerLink]="['/persona-card']" class="btn btn-outline-dark">persona-card</a>
+  <a [routerLink]="['/personas']" class="btn btn-outline-danger">personas</a>
+  <a [routerLink]="['/view-child']" class="btn btn-outline-info">view-child</a>
+<br>
+<br>
+<router-outlet></router-outlet>
+</div>
+<!--
+
   <br><br>
   <app-view-child></app-view-child>
   <br><br>
@@ -19,3 +38,4 @@
   <app-calculadora></app-calculadora>
   <br><br>
 <div>
+-->
